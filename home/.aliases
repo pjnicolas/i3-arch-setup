@@ -1,0 +1,45 @@
+# ls
+alias l='ls -CF'
+alias la='ls -a'
+alias ll='ls -l'
+alias lla='ls -la'
+
+# cd
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# git
+alias gaa='git add --all'
+
+# apps
+alias gcal='chromium https://calendar.google.com/calendar/render#main_7%7Cmonth'
+alias gdocs='chromium https://docs.google.com/document/u/0/'
+alias gkeep='chromium https://keep.google.com'
+alias gshop='chromium https://shoppinglist.google.com'
+alias taskx='chromium https://trello.com/b/uNeSUPFl/tasks'
+
+# timers
+alias 3min='chromium https://www.google.com/search?q=countdown+3+minutes'
+alias 5min='chromium https://www.google.com/search?q=countdown+5+minutes'
+alias 10min='chromium https://www.google.com/search?q=countdown+10+minutes'
+
+# network info
+alias getip='ip address show wlp2s0 | grep "inet " | tr -s " " | cut -f3 -d" "'
+alias getbssid='iw dev wlp2s0 link | grep SSID | cut -f2 -d" "'
+
+# managers
+alias manager-audio='pavucontrol'
+alias manager-bluetooth='blueman-manager'
+alias manager-wifi='wicd-gtk'
+
+# random
+alias rm='trash' # Disable permanent remove
+alias grepr='grep -rnw $1 -e $2' # Recursive grep (e.g. `grep ./src blue`)
+alias cdev='cd ~/Development && cd'
+alias ldev='ls ~/Development | tr -d " "'
+alias op='xdg-open $@'
+alias nightmode='redshift -P -O 3500'
+alias daymode='redshift -P -O 6500'
+alias react-native-open-devmenu='adb shell input keyevent KEYCODE_MENU'
+alias fixkeys='setxkbmap -layout es'

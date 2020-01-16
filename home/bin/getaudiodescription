@@ -1,0 +1,7 @@
+#!/bin/bash
+
+pacmd list-sinks |\
+awk '/^\s*\*/{f=1}/^\s*index:/{f=0}f' |\
+grep "device.profile.description" |\
+head -n1 |\
+sed 's/.*= "\(.*\)".*/\1/'

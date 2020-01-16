@@ -1,0 +1,3 @@
+#!/bin/bash
+
+amixer sget Master | grep % | head -1 | cut -f2 -d"[" | cut -f1 -d"]"
