@@ -1,7 +1,7 @@
 # i3-arch-setup
 My personal i3wm setup guide for arch linux
 
-# [Work in progess guide]
+# [Work in progress guide]
 
 ## Clone the repo
 
@@ -21,14 +21,24 @@ sudo pacman -S \
     scrot               `#Screenshoot tool`\
     rxvt-unicode        `#Terminal emulator`\
     urxvt-perls         `#URxvt auxiliary scripts`\
-    redshift            `#Nightmode`\
+    redshift            `#Night mode`\
     perl-anyevent-i3    `#Dependency of i3-save-tree`\
     gimp                `#Image editor`\
     inkscape            `#Vector editor`\
     chromium            `#Web browser`\
     telegram-desktop    `#Telegram Chat Client`\
     nodejs              `#Node js`\
+    code                `#Visual Studio Code Editor`\
     XXX                 `#XXX`\
+```
+
+## Install yay AUR helper
+
+```
+cd /tmp
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
 ```
 
 ## Install AUR dependencies

@@ -1,0 +1,71 @@
+{
+  "editor.rulers": [
+    100
+  ],
+  "editor.minimap.enabled": false,
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.detectIndentation": true,
+  "editor.suggestSelection": "first",
+  "editor.renderFinalNewline": true,
+  "editor.mouseWheelZoom": true,
+  "editor.fontFamily": "'Operator Mono Medium'",
+  "editor.fontSize": 13,
+  "editor.letterSpacing": 0.5,
+  "editor.fontWeight": "400",
+  "editor.cursorStyle": "line",
+  "editor.cursorWidth": 2,
+  "editor.cursorBlinking": "blink",
+  "editor.renderWhitespace": "boundary",
+  // "editor.lineHeight": 20,
+  // html, javascript, typescript, javascriptreact, json
+  "files.trimTrailingWhitespace": true,
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "window.zoomLevel": 1,
+  "window.menuBarVisibility": "default",
+  "window.titleBarStyle": "custom",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.colorTheme": "Cobalt2",
+  "explorer.confirmDelete": true,
+  "git.ignoreMissingGitWarning": true,
+  "breadcrumbs.enabled": true,
+  "extensions.ignoreRecommendations": false,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "emmet.excludeLanguages": [
+    "javascriptreact",
+  ],
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk_xe",
+      "command": "latexmk",
+      "args": [
+        "-xelatex",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        // "-pdf",
+        "%DOC%"
+      ]
+    },
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk_xe",
+      "tools": [
+        "latexmk_xe"
+      ]
+    },
+  ],
+  "todo-tree.highlights.customHighlight": {
+    "TODO": {},
+    "FIXME": {}
+  },
+  "todo-tree.highlights.defaultHighlight": {
+    "foreground": "green",
+    "type": "none"
+  },
+  "todo-tree.tree.expanded": true,
+  // In a 1080p monitor you should see about 43 lines of code.
+}
