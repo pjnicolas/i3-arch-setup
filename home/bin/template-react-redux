@@ -1,0 +1,66 @@
+#!/bin/bash
+
+name_lowercase=$1
+name_uppercase=`echo "$name_lowercase" | tr [a-z] [A-Z]`
+
+if [ $# -ne 1 ]; then
+  echo "Invalid arguments"
+  exit 1
+fi
+
+action_content=`cat << EndOfMessage
+import {
+  NAME_SET,
+  NAME_UNSET,
+} from './types';
+
+export const nameSet = (name) => ({
+  type: NAME_SET,
+  name,
+});
+
+export const nameUnset = () => ({
+  type: NAME_UNSET,
+});
+EndOfMessage
+`
+
+reducer_content=`cat << EndOfMessage
+import {
+  NAME_SET,
+  NAME_UNSET,
+} from '../actions/types';
+
+const defaultState = null;
+
+export default (state = defaultState, action) => {
+  switch (action.type) {
+    case NAME_SET:
+      return action.name;
+    case NAME_UNSET:
+      return null;
+    default:
+      return state;
+  }
+};
+EndOfMessage
+`
+
+types_content=`cat << EndOfMessage
+
+export const NAME_SET = 'NAME_SET';
+export const NAME_UNSET = 'NAME_UNSET';
+EndOfMessage
+`
+
+action_content=`echo "${action_content//name/$name_lowercase}"`
+action_content=`echo "${action_content//NAME/$name_uppercase}"`
+reducer_content=`echo "${reducer_content//name/$name_lowercase}"`
+reducer_content=`echo "${reducer_content//NAME/$name_uppercase}"`
+types_content=`echo "${types_content//name/$name_lowercase}"`
+types_content=`echo "${types_content//NAME/$name_uppercase}"`
+
+echo "$action_content" > src/redux/actions/"$name_lowercase".js
+echo "$reducer_content" > src/redux/reducers/"$name_lowercase".js
+echo "$types_content" >> src/redux/actions/types.js
+

@@ -8,6 +8,8 @@ Pictures                        : wallpaper.png
 .config/i3                      : config
 .config/dunst                   : dunstrc
 .config/Code - OSS/User         : settings.json keybindings.json
+.config/polybar                 : *
+.config/compton                 : config
 EOF
 `
 

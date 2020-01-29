@@ -45,17 +45,24 @@ makepkg -si
 
 ```
 yay -S \
+    megasync            `#MegaSync Client`\
+    polybar             `#Status bar`\
     XXX                 `#XXX`\
 ```
 
 ## Install npm global programs
 
 ```
+mkdir ~/.npm-global
+npm config set prefix '~/.npm-global'
+```
+
+```
 npm install --global \
     npm                 `#Node package manager`\
     n                   `#Node version manager`\
     nodemon             `#Monitor changes in nodejs projects`\
-    firebase-tools      `#Firebase tools`\
+    firebase-tools      `#Firebase tools`
 ```
 
 ## Copy the scripts and config files

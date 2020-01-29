@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# BINARY TO DECIMAL
+# USE: "b2d 11011"
+
+for i in $*; do
+	if [ "x`echo $i | grep -x \"[01]\+\.[01]\+\.[01]\+\.[01]\+\"`" == "x" ]; then
+		if [ "x`echo $i | grep -x \"^[01]*$\"`" == "x" ]; then
+			echo "Not a binary number" >&2
+		else
+			echo "obase=10;ibase=2;$i" | bc
+		fi
+	else
+		a=`echo $i | cut -f1 -d"."`
+		b=`echo $i | cut -f2 -d"."`
+		c=`echo $i | cut -f3 -d"."`
+		d=`echo $i | cut -f4 -d"."`
+		a=`echo "obase=10;ibase=2;$a" | bc`
+		b=`echo "obase=10;ibase=2;$b" | bc`
+		c=`echo "obase=10;ibase=2;$c" | bc`
+		d=`echo "obase=10;ibase=2;$d" | bc`
+		echo "$a.$b.$c.$d"
+	fi
+done

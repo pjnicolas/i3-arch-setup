@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# DECIMAL TO BINARY
+# USE: "d2b 65"
+
+if [ $# -eq 0 ]; then
+	echo "Error: Debes de pasar minimo 1 argumento" >&2
+	exit 2
+fi
+
+error=0
+
+for i in $*; do
+	if [ "x`echo $i | grep -x \"[0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\"`" == "x" ]; then
+		if [ "x`echo $i | grep -x \"^[0-9]*$\"`" == "x" ]; then
+			echo "Not a decimal number" >&2
+			error=1
+		else
+			echo "obase=2;$i" | bc
+		fi
+	else
+		a=`echo $i | cut -f1 -d"."`
+		b=`echo $i | cut -f2 -d"."`
+		c=`echo $i | cut -f3 -d"."`
+		d=`echo $i | cut -f4 -d"."`
+		a="00000000`echo \"obase=2;$a\" | bc`"
+		b="00000000`echo \"obase=2;$b\" | bc`"
+		c="00000000`echo \"obase=2;$c\" | bc`"
+		d="00000000`echo \"obase=2;$d\" | bc`"
+		a=`echo $a | rev | cut -c1-8 | rev`
+		b=`echo $b | rev | cut -c1-8 | rev `
+		c=`echo $c | rev | cut -c1-8 | rev `
+		d=`echo $d | rev | cut -c1-8 | rev `
+		echo "$a.$b.$c.$d"
+	fi
+done
+
+exit $error

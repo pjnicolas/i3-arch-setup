@@ -1,0 +1,10 @@
+#!/bin/bash
+data=`ping -c 1 8.8.8.8`
+if [ "$?" -eq 0 ]; then
+	ms=`echo "$data" | head -2 | tail -1 | cut -f7 -d" " | cut -f2 -d"="`
+	echo "Internet is working. Google answer at `echo "$ms"`ms"
+	exit 0
+else
+	echo "Can't connect the network"
+	exit 1
+fi

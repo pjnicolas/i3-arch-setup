@@ -1,0 +1,20 @@
+#!/bin/bash
+
+while true; do
+	echo -n "."
+	testinternet > /dev/null 2> /dev/null
+	if [ $? -eq 1 ]; then
+		sleep 1
+		testinternet > /dev/null 2> /dev/null
+		if [ $? -eq 1 ]; then
+			echo
+			date
+			echo -n "Internet is not working. Resetting services... "
+			fucknet
+			echo -e "Done.\n"
+			sleep 55
+		fi
+	fi
+	sleep 5
+done
+

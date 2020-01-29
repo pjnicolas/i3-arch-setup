@@ -33,6 +33,14 @@ alias manager-audio='pavucontrol'
 alias manager-bluetooth='blueman-manager'
 alias manager-wifi='wicd-gtk'
 
+# retro emulators
+alias emu-controller-xbox-one-dongle='xow'
+alias emu-gamecube='dolphin-emu'
+alias emu-wii='dolphin-emu'
+alias emu-nes='nestopia'
+alias emu-snes='snes9x-gtk'
+alias emu-n64='mupen64plus'
+
 # random
 alias rm='trash' # Disable permanent remove
 alias grepr='grep -rnw $1 -e $2' # Recursive grep (e.g. `grep ./src blue`)

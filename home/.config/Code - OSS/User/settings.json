@@ -67,5 +67,6 @@
     "type": "none"
   },
   "todo-tree.tree.expanded": true,
+  // "xmlTools.splitAttributesOnFormat": true,
   // In a 1080p monitor you should see about 43 lines of code.
 }
