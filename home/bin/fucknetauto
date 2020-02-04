@@ -4,7 +4,8 @@ while true; do
 	echo -n "."
 	testinternet > /dev/null 2> /dev/null
 	if [ $? -eq 1 ]; then
-		sleep 1
+		echo -n "x"
+		sleep 5
 		testinternet > /dev/null 2> /dev/null
 		if [ $? -eq 1 ]; then
 			echo
@@ -17,4 +18,3 @@ while true; do
 	fi
 	sleep 5
 done
-

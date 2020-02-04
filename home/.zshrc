@@ -2,6 +2,7 @@ export ZSH="/home/dizzyrobin/.oh-my-zsh"
 ZSH_THEME="pygmalion"
 
 setopt dotglob
+setopt no_share_history
 unsetopt share_history
 
 # Uncomment the following line to use case-sensitive completion.
