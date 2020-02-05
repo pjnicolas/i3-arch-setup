@@ -10,26 +10,64 @@ git clone https://github.com/dizzyrobin/i3-arch-setup
 cd i3-arch-setup
 ```
 
+## Create user
+
+```
+useradd dizzyrobin -G sudo,wheel -m -U -s /bin/zsh
+passwd dizzyrobin
+```
+
 ## Install dependecies
 
 ```
 sudo pacman -S \
-    qt5-base            `#Depencency`\
-    dunst               `#Notification manager`\
-    playerctl           `#Audio controller for hotkeys`\
-    feh                 `#Wallpaper tool`\
-    scrot               `#Screenshoot tool`\
-    rxvt-unicode        `#Terminal emulator`\
-    urxvt-perls         `#URxvt auxiliary scripts`\
-    redshift            `#Night mode`\
-    perl-anyevent-i3    `#Dependency of i3-save-tree`\
-    gimp                `#Image editor`\
-    inkscape            `#Vector editor`\
-    chromium            `#Web browser`\
-    telegram-desktop    `#Telegram Chat Client`\
-    nodejs              `#Node js`\
-    code                `#Visual Studio Code Editor`\
-    XXX                 `#XXX`\
+    base-devel              `#Basic developer tools`\
+    vi                      `#Editor`\
+    vim                     `#Editor`\
+    nano                    `#Editor`\
+    git                     `#Version control`\
+    qt5-base                `#Depencency`\
+    dunst                   `#Notification manager`\
+    playerctl               `#Audio controller for hotkeys`\
+    feh                     `#Wallpaper tool`\
+    scrot                   `#Screenshoot tool`\
+    rxvt-unicode            `#Terminal emulator`\
+    urxvt-perls             `#URxvt auxiliary scripts`\
+    redshift                `#Night mode`\
+    perl-anyevent-i3        `#Dependency of i3-save-tree`\
+    gimp                    `#Image editor`\
+    inkscape                `#Vector editor`\
+    chromium                `#Web browser`\
+    telegram-desktop        `#Telegram Chat Client`\
+    nodejs                  `#Node js`\
+    npm                     `#Node Package Manager`\
+    code                    `#Visual Studio Code Editor`\
+    discord                 `#Discord chat for gamers`\
+    nautilus                `#File manager`\
+    file-roller             `#Archive manager`\
+    pulseaudio              `#Pulseaudio`\
+    paprefs                 `#PulseAudio Preferences`\
+    pavucontrol             `#PulseAudio Volume Control`\
+    pulseaudio-alsa         `#PulseAudio Alsa`\
+    wget                    `#Network utility`\
+    autorandr               `#Auto xrandr`\
+    dbus                    `#dbus lib`\
+    python-dbus             `#python dbug lib`\
+    networkmanager          `#python dbug lib`\
+    network-manager-applet  `#Network manager applet`\
+    thunderbird             `#Email reader`\
+    picom                   `#X Compositor`\
+    blueman                 `#Bluetooth manager`\
+    watchman                `#A file watching utility`\
+    i3lock                  `#i3wm lock screen`\
+    trash-cli               `#Trash cli tool`\
+    XXX                     `#XXX`\
+```
+
+## Install oh-my-zsh
+
+```
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 ## Install yay AUR helper
@@ -47,6 +85,11 @@ makepkg -si
 yay -S \
     megasync            `#MegaSync Client`\
     polybar             `#Status bar`\
+    ttf-ms-fonts        `#Fonts from Microsoft`\
+    google-chrome       `#Google Chrome web browser`\
+    spotify             `#Spotify`\
+    tor-browser         `#Tor Browser`\
+    jdk                 `#Java Development Kit`\
     XXX                 `#XXX`\
 ```
 
@@ -62,6 +105,7 @@ npm install --global \
     npm                 `#Node package manager`\
     n                   `#Node version manager`\
     nodemon             `#Monitor changes in nodejs projects`\
+    react-native-cli    `#React native tools`\
     firebase-tools      `#Firebase tools`
 ```
 
