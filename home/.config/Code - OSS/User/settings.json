@@ -9,7 +9,7 @@
   "editor.suggestSelection": "first",
   "editor.renderFinalNewline": true,
   "editor.mouseWheelZoom": true,
-  "editor.fontFamily": "'Operator Mono Medium'",
+  "editor.fontFamily": "'monospace'",
   "editor.fontSize": 13,
   "editor.letterSpacing": 0.5,
   "editor.fontWeight": "400",
@@ -22,7 +22,7 @@
   "files.trimTrailingWhitespace": true,
   "files.eol": "\n",
   "files.insertFinalNewline": true,
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 0,
   "window.menuBarVisibility": "default",
   "window.titleBarStyle": "custom",
   "workbench.startupEditor": "newUntitledFile",
@@ -67,6 +67,14 @@
     "type": "none"
   },
   "todo-tree.tree.expanded": true,
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "workbench.activityBar.visible": true,
+  "todo-tree.tree.showScanModeButton": false,
   // "xmlTools.splitAttributesOnFormat": true,
   // In a 1080p monitor you should see about 43 lines of code.
 }

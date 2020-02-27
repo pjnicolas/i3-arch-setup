@@ -166,12 +166,12 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar
-# bar {
-#         mode hide
-#         status_command i3blocks
-#         modifier $mod+Shift
-#         # output primary
-# }
+bar {
+        mode hide
+        status_command i3blocks
+        modifier $mod+Shift
+        # output primary
+}
 
 # Toggle bar
 bindsym $mod+b bar mode toggle
@@ -197,33 +197,33 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Screenshot utility
-bindsym --release Print exec scrot -s /home/dizzyrobin/Pictures/screenshots/%Y-%m-%d_%H-%M-%S.png
+bindsym --release Print exec scrot -s ~/Pictures/screenshots/%Y-%m-%d_%H-%M-%S.png
 
 for_window [class="Yad"] floating enable
 for_window [class="Pavucontrol"] fullscreen enable
 
 # Assign workspaces to startup aplications
 assign [class="URxvt"] $ws1
-assign [class="Chromium"] $ws2
+assign [class="Google-chrome"] $ws2
+assign [class="brainfm"] $ws3
 assign [class="whatsapp-nativefier"] $ws4
 assign [class="TelegramDesktop"] $ws4
-for_window [class="Spotify"] move to workspace $ws3
+# for_window [class="Spotify"] move to workspace $ws3
+
+# Set up monitors
+exec --no-startup-id autorandr --change home
 
 # Startup applications
 exec --no-startup-id urxvt
 exec --no-startup-id urxvt
-exec --no-startup-id chromium
-exec --no-startup-id spotify
-exec --no-startup-id whatsapp
+exec --no-startup-id google-chrome-stable
+exec --no-startup-id whatsapp-nativefier
 exec --no-startup-id telegram-desktop
 
-exec --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id dunst
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
-# exec --no-startup-id megasync
+exec --no-startup-id megasync
 exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
-exec --no-startup-id compton --config ~/.config/compton/config
+exec --no-startup-id picom --config ~/.config/compton/config
 exec --no-startup-id redshift -t 6500:3500
-
-# exec --no-startup-id autorandr --change home-pau

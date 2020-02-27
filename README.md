@@ -61,6 +61,14 @@ sudo pacman -S \
     watchman                `#A file watching utility`\
     i3lock                  `#i3wm lock screen`\
     trash-cli               `#Trash cli tool`\
+    alsa-utils              `#Alsa utils tools`\
+    pulseaudio-bluetooth    `#Pulseaudio bluetooth module`\
+    yad                     `#Calendar`\
+    noto-fonts-emoji        `#Font for icons and emojis`\
+    ttf-font-awesome        `#Font for icons and emojis`\
+    iw                      `#XXX`\
+    rsync                   `#XXX`\
+    acpi                    `#XXX`\
     XXX                     `#XXX`\
 ```
 
@@ -84,12 +92,10 @@ makepkg -si
 ```
 yay -S \
     megasync            `#MegaSync Client`\
-    polybar             `#Status bar`\
     ttf-ms-fonts        `#Fonts from Microsoft`\
     google-chrome       `#Google Chrome web browser`\
     spotify             `#Spotify`\
     tor-browser         `#Tor Browser`\
-    jdk                 `#Java Development Kit`\
     XXX                 `#XXX`\
 ```
 

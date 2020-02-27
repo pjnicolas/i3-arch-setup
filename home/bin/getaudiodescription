@@ -2,6 +2,6 @@
 
 pacmd list-sinks |\
 awk '/^\s*\*/{f=1}/^\s*index:/{f=0}f' |\
-grep "device.profile.description" |\
+grep "device.description" |\
 head -n1 |\
 sed 's/.*= "\(.*\)".*/\1/'

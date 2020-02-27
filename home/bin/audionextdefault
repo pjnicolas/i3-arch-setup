@@ -1,0 +1,11 @@
+#!/bin/bash
+
+index=`getaudioindex`
+sinks_number=`getaudiosinksnumber`
+let new_index=$index+1
+
+if [ $new_index -le $sinks_number ]; then
+  pacmd set-default-sink $new_index
+else
+  pacmd set-default-sink 1
+fi

@@ -1,0 +1,52 @@
+#!/usr/bin/expect -f
+
+set prompt "#"
+set address 98:7A:14:32:FC:98
+# set address 38:18:4C:2A:E5:0E
+set timeout -1
+
+fconfigure stdout -buffering none
+
+log_user 0
+
+spawn bluetoothctl
+expect $prompt
+
+puts "> POWER ON"
+
+send "power on\r"
+expect -re $prompt
+expect -re $
+
+puts "> AGENT ON"
+send "agent on\r"
+expect -re $prompt
+expect -re $
+
+puts "> REMOVING ADDRESS..."
+send "remove $address\r"
+sleep 8
+expect -re $prompt
+expect -re $
+
+puts "> SCANNING..."
+send "scan on\r"
+puts "\n"
+log_user 1
+expect $address
+log_user 0
+puts "\n"
+send "scan off\r"
+expect "Controller"
+
+puts "> PAIRING..."
+send "pair $address\r"
+expect "Pairing successful"
+
+puts "> CONNECTING..."
+send "connect $address\r"
+sleep 8
+
+puts "YOU SHOULD BE PAIRED NOW!"
+send "quit\r"
+expect eof
