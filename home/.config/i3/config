@@ -206,6 +206,7 @@ for_window [class="Pavucontrol"] fullscreen enable
 assign [class="URxvt"] $ws1
 assign [class="Google-chrome"] $ws2
 assign [class="brainfm"] $ws3
+assign [class="Slack"] $ws3
 assign [class="whatsapp-nativefier"] $ws4
 assign [class="TelegramDesktop"] $ws4
 # for_window [class="Spotify"] move to workspace $ws3
@@ -219,6 +220,7 @@ exec --no-startup-id urxvt
 exec --no-startup-id google-chrome-stable
 exec --no-startup-id whatsapp-nativefier
 exec --no-startup-id telegram-desktop
+exec --no-startup-id slack
 
 exec --no-startup-id dunst
 exec --no-startup-id nm-applet
@@ -227,3 +229,12 @@ exec --no-startup-id megasync
 exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
 exec --no-startup-id picom --config ~/.config/compton/config
 exec --no-startup-id redshift -t 6500:3500
+
+# Setup keyboard stuff
+exec --no-startup-id setxkbmap -option compose:ralt
+exec --no-startup-id setxkbmap -option caps:escape
+exec --no-startup-id setxkbmap -layout us
+
+
+# Toggle key layout us es
+bindsym $mod+m exec togglekb

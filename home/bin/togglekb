@@ -1,0 +1,11 @@
+#!/bin/bash
+layout=`setxkbmap -query | grep layout | cut -f2 -d":" | xargs`
+
+setxkbmap -option compose:ralt
+setxkbmap -option caps:escape
+
+if [ "x$layout" == "xus" ]; then
+  setxkbmap -layout es && dunstify -r 7778 -u low "KEYBOARD LAYOUT" "ES"
+else
+  setxkbmap -layout us && dunstify -r 7778 -u low "KEYBOARD LAYOUT" "US"
+fi

@@ -13,8 +13,9 @@ cd i3-arch-setup
 ## Create user
 
 ```
-useradd dizzyrobin -G sudo,wheel -m -U -s /bin/zsh
-passwd dizzyrobin
+NEW_USER="dizzyrobin" # Change 'dizzyrobin' for your wanted username
+useradd $NEW_USER -G sudo,wheel -m -U -s /bin/zsh
+passwd $NEW_USER
 ```
 
 ## Install dependecies

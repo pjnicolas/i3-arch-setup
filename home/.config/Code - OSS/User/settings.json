@@ -2,8 +2,10 @@
   "editor.rulers": [
     100
   ],
-  "editor.minimap.enabled": false,
   "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  "editor.minimap.enabled": false,
   "editor.tabSize": 2,
   "editor.detectIndentation": true,
   "editor.suggestSelection": "first",
@@ -12,21 +14,28 @@
   "editor.fontFamily": "'monospace'",
   "editor.fontSize": 13,
   "editor.letterSpacing": 0.5,
-  "editor.fontWeight": "400",
-  "editor.cursorStyle": "line",
-  "editor.cursorWidth": 2,
+  "editor.cursorStyle": "block",
+  // "editor.cursorWidth": 4,
   "editor.cursorBlinking": "blink",
   "editor.renderWhitespace": "boundary",
-  // "editor.lineHeight": 20,
-  // html, javascript, typescript, javascriptreact, json
+  "editor.fontWeight": "bold",
+  "[clojure]": {
+    "editor.formatOnSave": false,
+    "editor.formatOnPaste": false,
+    "editor.formatOnType": false
+  },
+  "scssFormatter.useTabs": false,
+  "scssFormatter.tabWidth": 2,
   "files.trimTrailingWhitespace": true,
   "files.eol": "\n",
   "files.insertFinalNewline": true,
   "window.zoomLevel": 0,
   "window.menuBarVisibility": "default",
   "window.titleBarStyle": "custom",
+  "window.restoreWindows": "none",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.colorTheme": "Cobalt2",
+  "workbench.activityBar.visible": true,
   "explorer.confirmDelete": true,
   "git.ignoreMissingGitWarning": true,
   "breadcrumbs.enabled": true,
@@ -58,23 +67,81 @@
       ]
     },
   ],
-  "todo-tree.highlights.customHighlight": {
-    "TODO": {},
-    "FIXME": {}
-  },
+  "todo-tree.tree.expanded": true,
   "todo-tree.highlights.defaultHighlight": {
-    "foreground": "green",
     "type": "none"
   },
-  "todo-tree.tree.expanded": true,
   "files.exclude": {
     "**/.classpath": true,
     "**/.project": true,
     "**/.settings": true,
     "**/.factorypath": true
   },
-  "workbench.activityBar.visible": true,
   "todo-tree.tree.showScanModeButton": false,
-  // "xmlTools.splitAttributesOnFormat": true,
-  // In a 1080p monitor you should see about 43 lines of code.
+  "vim.leader": "<space>",
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    }
+  ],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+  ],
+  "workbench.colorCustomizations": {
+    "[Cobalt2]": {
+      "editorIndentGuide.activeBackground": "#789",
+      "editorIndentGuide.background": "#456"
+    }
+  },
+  "editor.tokenColorCustomizations": {
+    "[Cobalt2]": {
+      // "comments": "#FF0000",
+      // "functions": "#FF0000",
+      // "strings": "#FF0000",
+      "keywords": "#ff5e00"
+    }
+  },
+  "vsnotes.defaultNotePath": "/home/dizzyrobin/Cloud/Notes",
+  "vsnotes.noteTitleConvertSpaces": "-",
+  "vsnotes.defaultNoteName": "note",
+  "vsnotes.tokens": [
+    {
+      "type": "datetime",
+      "token": "{dt}",
+      "format": "YYMMDD",
+      "description": "Insert formatted datetime."
+    },
+    {
+      "type": "title",
+      "token": "{title}",
+      "description": "Insert note title from input box.",
+      "format": "Untitled"
+    },
+    {
+      "type": "extension",
+      "token": "{ext}",
+      "description": "Insert file vsnotes.",
+      "format": "md"
+    }
+  ],
+  "vsnotes.defaultSnippet": {
+    "langId": "markdown",
+    "name": "vsnote_template_custom"
+  },
+  "calva.paredit.defaultKeyMap": "none",
+  "calva.fmt.formatAsYouType": false,
+  "calva.highlight.enableBracketColors": false,
+  "calva.highlight.matchedBracketStyle": {
+    "backgroundColor": "#111",
+    "border": "1px solid #eee"
+  },
 }
