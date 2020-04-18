@@ -2,7 +2,10 @@
   "editor.rulers": [
     100
   ],
-  "editor.formatOnSave": true,
+  // "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
   "editor.formatOnPaste": false,
   "editor.formatOnType": false,
   "editor.minimap.enabled": false,
@@ -19,6 +22,14 @@
   "editor.cursorBlinking": "blink",
   "editor.renderWhitespace": "boundary",
   "editor.fontWeight": "bold",
+  "editor.tokenColorCustomizations": {
+    "[Cobalt2]": {
+      "keywords": "#ff5e00"
+      // "comments": "#FF0000",
+      // "functions": "#FF0000",
+      // "strings": "#FF0000",
+    }
+  },
   "[clojure]": {
     "editor.formatOnSave": false,
     "editor.formatOnPaste": false,
@@ -33,39 +44,22 @@
   "window.menuBarVisibility": "default",
   "window.titleBarStyle": "custom",
   "window.restoreWindows": "none",
-  "workbench.startupEditor": "newUntitledFile",
-  "workbench.colorTheme": "Cobalt2",
-  "workbench.activityBar.visible": true,
   "explorer.confirmDelete": true,
   "git.ignoreMissingGitWarning": true,
   "breadcrumbs.enabled": true,
   "extensions.ignoreRecommendations": false,
   "javascript.updateImportsOnFileMove.enabled": "never",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.colorTheme": "Cobalt2",
+  "workbench.activityBar.visible": true,
+  "workbench.colorCustomizations": {
+    "[Cobalt2]": {
+      "editorIndentGuide.activeBackground": "#789",
+      "editorIndentGuide.background": "#456"
+    }
+  },
   "emmet.excludeLanguages": [
     "javascriptreact",
-  ],
-  "latex-workshop.view.pdf.viewer": "tab",
-  "latex-workshop.latex.tools": [
-    {
-      "name": "latexmk_xe",
-      "command": "latexmk",
-      "args": [
-        "-xelatex",
-        "-synctex=1",
-        "-interaction=nonstopmode",
-        "-file-line-error",
-        // "-pdf",
-        "%DOC%"
-      ]
-    },
-  ],
-  "latex-workshop.latex.recipes": [
-    {
-      "name": "latexmk_xe",
-      "tools": [
-        "latexmk_xe"
-      ]
-    },
   ],
   "todo-tree.tree.expanded": true,
   "todo-tree.highlights.defaultHighlight": {
@@ -78,38 +72,13 @@
     "**/.factorypath": true
   },
   "todo-tree.tree.showScanModeButton": false,
-  "vim.leader": "<space>",
-  "vim.insertModeKeyBindings": [
-    {
-      "before": [
-        "j",
-        "j"
-      ],
-      "after": [
-        "<Esc>"
-      ]
-    }
-  ],
   "eslint.validate": [
     "javascript",
     "javascriptreact",
     "typescript",
     "typescriptreact",
   ],
-  "workbench.colorCustomizations": {
-    "[Cobalt2]": {
-      "editorIndentGuide.activeBackground": "#789",
-      "editorIndentGuide.background": "#456"
-    }
-  },
-  "editor.tokenColorCustomizations": {
-    "[Cobalt2]": {
-      // "comments": "#FF0000",
-      // "functions": "#FF0000",
-      // "strings": "#FF0000",
-      "keywords": "#ff5e00"
-    }
-  },
+
   "vsnotes.defaultNotePath": "/home/dizzyrobin/Cloud/Notes",
   "vsnotes.noteTitleConvertSpaces": "-",
   "vsnotes.defaultNoteName": "note",
