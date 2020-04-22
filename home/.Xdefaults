@@ -1,0 +1,38 @@
+!URxvt*termName:                 rxvt-256color
+!URxvt.letterSpace:              10
+!URxvt*loginShell:               true
+!URxvt.clipboard.autocopy: true
+
+URxvt.iso14755:                 false
+URxvt.iso14755_52:              false
+URxvt.font:                     xft:Monospace:size=9,xft:Operator\ Mono:size=9
+URxvt.scrollBar:                false
+URxvt.lineSpace:                2
+URxvt.internalBorder:           4
+URxvt.perl-ext-common:          default,selection-to-clipboard,clipboard
+URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
+URxvt.keysym.Shift-Control-V:   perl:clipboard:paste
+
+URxvt.keysym.Control-Up:     \033[1;5A
+URxvt.keysym.Control-Down:   \033[1;5B
+URxvt.keysym.Control-Left:   \033[1;5D
+URxvt.keysym.Control-Right:  \033[1;5C
+
+*background: #000000
+*foreground: #ffffff
+*color0: #000000
+*color8: #000000
+*color1: #fb0008
+*color9: #fb0008
+*color2: #08fb00
+*color10: #08fb00
+*color3: #fbf300
+*color11: #fbf300
+*color4: #0008fb
+*color12: #0008fb
+*color5: #f300fb
+*color13: #f300fb
+*color6: #00fbf3
+*color14: #00fbf3
+*color7: #ffffff
+*color15: #ffffff

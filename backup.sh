@@ -2,9 +2,10 @@
 
 # folder                        : file1 file2 file3 [...]
 lines=`cat << EOF
-.                               : .Xresources .aliases .zprofile .xinitrc .zshrc .XCompose
+.                               : .Xresources .Xdefaults .aliases .zprofile .xinitrc .zshrc .XCompose
 bin                             : *
 Pictures                        : wallpaper.png
+.oh-my-zsh/themes               : pygmalion.zsh-theme
 .config/i3                      : config
 .config/dunst                   : dunstrc
 .config/Code - OSS/User         : settings.json keybindings.json

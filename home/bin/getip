@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ip -4 address show dev enp0s3 | grep inet | xargs | cut -f2 -d" "
