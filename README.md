@@ -28,48 +28,58 @@ sudo pacman -S \
     nano                    `#Editor`\
     git                     `#Version control`\
     qt5-base                `#Depencency`\
-    dunst                   `#Notification manager`\
-    playerctl               `#Audio controller for hotkeys`\
     feh                     `#Wallpaper tool`\
     scrot                   `#Screenshoot tool`\
     rxvt-unicode            `#Terminal emulator`\
     urxvt-perls             `#URxvt auxiliary scripts`\
-    redshift                `#Night mode`\
-    perl-anyevent-i3        `#Dependency of i3-save-tree`\
-    gimp                    `#Image editor`\
-    inkscape                `#Vector editor`\
     chromium                `#Web browser`\
-    telegram-desktop        `#Telegram Chat Client`\
     nodejs                  `#Node js`\
     npm                     `#Node Package Manager`\
     code                    `#Visual Studio Code Editor`\
-    discord                 `#Discord chat for gamers`\
     nautilus                `#File manager`\
     file-roller             `#Archive manager`\
     pulseaudio              `#Pulseaudio`\
     paprefs                 `#PulseAudio Preferences`\
     pavucontrol             `#PulseAudio Volume Control`\
     pulseaudio-alsa         `#PulseAudio Alsa`\
+    alsa-utils              `#Alsa utils tools`\
     wget                    `#Network utility`\
+    arandr                  `#Graphical xrandr`\
     autorandr               `#Auto xrandr`\
     dbus                    `#dbus lib`\
-    python-dbus             `#python dbug lib`\
-    networkmanager          `#python dbug lib`\
-    network-manager-applet  `#Network manager applet`\
-    thunderbird             `#Email reader`\
+    python-dbus             `#python dbus lib`\
     picom                   `#X Compositor`\
-    blueman                 `#Bluetooth manager`\
-    watchman                `#A file watching utility`\
-    i3lock                  `#i3wm lock screen`\
     trash-cli               `#Trash cli tool`\
-    alsa-utils              `#Alsa utils tools`\
-    pulseaudio-bluetooth    `#Pulseaudio bluetooth module`\
+    noto-fonts              `#Fonts`
+    watchman                `#A file watching utility`\
+    dmenu                   `#i3wm app launcher`\
+    rofi                    `#i3wm app launcher`\
+    i3blocks                `#i3wm bar`\
+    i3status                `#i3wm bar`\
+    i3lock                  `#i3wm lock screen`\
     yad                     `#Calendar`\
     noto-fonts-emoji        `#Font for icons and emojis`\
     ttf-font-awesome        `#Font for icons and emojis`\
     iw                      `#XXX`\
     rsync                   `#XXX`\
     acpi                    `#XXX`\
+    neofetch                `#XXX`\
+    xorg                    `#XXX`\
+    xorg-xinit              `#XXX`\
+    jdk8-openjdk            `#XXX`\
+    dunst                   `#Notification manager`\
+
+    thunderbird             `#Email reader`\
+    gimp                    `#Image editor`\
+    inkscape                `#Vector editor`\
+    telegram-desktop        `#Telegram Chat Client`\
+    discord                 `#Discord chat for gamers`\
+    playerctl               `#Audio controller for hotkeys`\
+    redshift                `#Night mode`\
+    networkmanager          `#Network manager`\
+    network-manager-applet  `#Network manager applet`\
+    blueman                 `#Bluetooth manager`\
+    pulseaudio-bluetooth    `#Pulseaudio bluetooth module`\
     XXX                     `#XXX`\
 ```
 
@@ -109,11 +119,11 @@ npm config set prefix '~/.npm-global'
 
 ```
 npm install --global \
-    npm                 `#Node package manager`\
-    n                   `#Node version manager`\
-    nodemon             `#Monitor changes in nodejs projects`\
-    react-native-cli    `#React native tools`\
-    firebase-tools      `#Firebase tools`
+    npm                             `#Node package manager`\
+    n                               `#Node version manager`\
+    nodemon                         `#Monitor changes in nodejs projects`\
+    @react-native-community/cli     `#React native tools`\
+    firebase-tools                  `#Firebase tools`\
 ```
 
 ## Copy the scripts and config files
