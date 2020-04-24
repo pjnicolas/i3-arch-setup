@@ -14,7 +14,7 @@
   "editor.suggestSelection": "first",
   "editor.renderFinalNewline": true,
   "editor.mouseWheelZoom": true,
-  "editor.fontFamily": "'monospace'",
+  "editor.fontFamily": "Hack, monospace",
   "editor.fontSize": 13,
   "editor.letterSpacing": 0.5,
   "editor.cursorStyle": "block",
@@ -50,7 +50,6 @@
   "extensions.ignoreRecommendations": false,
   "javascript.updateImportsOnFileMove.enabled": "never",
   "workbench.startupEditor": "newUntitledFile",
-  "workbench.colorTheme": "Cobalt2",
   "workbench.activityBar.visible": true,
   "workbench.colorCustomizations": {
     "[Cobalt2]": {
@@ -113,4 +112,28 @@
     "backgroundColor": "#111",
     "border": "1px solid #eee"
   },
+  "workbench.colorTheme": "Cobalt2",
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk_xe",
+      "command": "latexmk",
+      "args": [
+        "-xelatex",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        // "-pdf",
+        "%DOC%"
+      ]
+    },
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk_xe",
+      "tools": [
+        "latexmk_xe"
+      ]
+    },
+  ],
 }

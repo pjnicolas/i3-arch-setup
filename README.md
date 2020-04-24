@@ -30,8 +30,7 @@ sudo pacman -S \
     qt5-base                `#Depencency`\
     feh                     `#Wallpaper tool`\
     scrot                   `#Screenshoot tool`\
-    rxvt-unicode            `#Terminal emulator`\
-    urxvt-perls             `#URxvt auxiliary scripts`\
+    termite                 `#Terminal emulator`\
     chromium                `#Web browser`\
     nodejs                  `#Node js`\
     npm                     `#Node Package Manager`\
@@ -50,7 +49,6 @@ sudo pacman -S \
     python-dbus             `#python dbus lib`\
     picom                   `#X Compositor`\
     trash-cli               `#Trash cli tool`\
-    noto-fonts              `#Fonts`
     watchman                `#A file watching utility`\
     dmenu                   `#i3wm app launcher`\
     rofi                    `#i3wm app launcher`\
@@ -58,6 +56,7 @@ sudo pacman -S \
     i3status                `#i3wm bar`\
     i3lock                  `#i3wm lock screen`\
     yad                     `#Calendar`\
+    noto-fonts              `#Fonts`
     noto-fonts-emoji        `#Font for icons and emojis`\
     ttf-font-awesome        `#Font for icons and emojis`\
     iw                      `#XXX`\
@@ -82,6 +81,8 @@ sudo pacman -S \
     pulseaudio-bluetooth    `#Pulseaudio bluetooth module`\
     XXX                     `#XXX`\
 ```
+
+ttf-font-awesome noto-fonts-emoji noto-fonts
 
 ## Install oh-my-zsh
 

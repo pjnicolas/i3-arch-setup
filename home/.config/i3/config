@@ -34,7 +34,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -202,16 +202,18 @@ bindsym --release Print exec scrot -s ~/Pictures/screenshots/%Y-%m-%d_%H-%M-%S.p
 for_window [class="Yad"] floating enable
 
 # Assign workspaces to startup aplications
-# assign [class="URxvt"] $ws1
 # assign [class="Google-chrome"] $ws2
 
 # Startup applications
-exec --no-startup-id urxvt
-exec --no-startup-id urxvt
+exec --no-startup-id termite
+exec --no-startup-id termite
 # exec --no-startup-id google-chrome-stable
 
 exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
 # exec --no-startup-id dunst
 # exec --no-startup-id picom --config ~/.config/compton/config
+
+setxkbmap -option compose:ralt
+setxkbmap -option caps:escape
 
 exec --no-startup-id x1080
