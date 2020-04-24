@@ -213,7 +213,7 @@ exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
 # exec --no-startup-id dunst
 # exec --no-startup-id picom --config ~/.config/compton/config
 
-setxkbmap -option compose:ralt
-setxkbmap -option caps:escape
+exec --no-startup-id setxkbmap -option compose:ralt
+exec --no-startup-id setxkbmap -option caps:escape
 
 exec --no-startup-id x1080
