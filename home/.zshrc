@@ -54,3 +54,10 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi
 
 setopt dotglob
 unsetopt share_history
+
+_systemctl_unit_state() {
+  typeset -gA _sys_unit_state
+  _sys_unit_state=( $(__systemctl list-unit-files "$PREFIX*" | awk '{print $1, $2}') )
+}
+
+zstyle ':completion:*' rehash true

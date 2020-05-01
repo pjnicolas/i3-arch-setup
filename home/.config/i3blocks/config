@@ -3,9 +3,19 @@ align=left
 separator=false
 separator_block_width=28
 
-[netstatus]
-command=/home/dizzyrobin/bin/getip
-interval=100
+[spotify]
+command=/home/dizzyrobin/.config/i3blocks/spotify.py
+color=#81b71a
+interval=5
+
+[volume-pulseaudio]
+command=/home/dizzyrobin/.config/i3blocks/volume-pulseaudio
+interval=once
+signal=1
+
+[wifistatus]
+command=/home/dizzyrobin/.config/i3blocks/wifistatus
+interval=5
 markup=pango
 label=📡 
 
@@ -13,3 +23,8 @@ label=📡
 command=/home/dizzyrobin/.config/i3blocks/calendar
 interval=1
 label=📅 
+
+[battery2]
+command=/home/dizzyrobin/.config/i3blocks/battery2
+markup=pango
+interval=30

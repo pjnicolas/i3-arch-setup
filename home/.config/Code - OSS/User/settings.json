@@ -2,7 +2,7 @@
   "editor.rulers": [
     100
   ],
-  // "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
@@ -35,8 +35,6 @@
     "editor.formatOnPaste": false,
     "editor.formatOnType": false
   },
-  "scssFormatter.useTabs": false,
-  "scssFormatter.tabWidth": 2,
   "files.trimTrailingWhitespace": true,
   "files.eol": "\n",
   "files.insertFinalNewline": true,
@@ -51,6 +49,7 @@
   "javascript.updateImportsOnFileMove.enabled": "never",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.activityBar.visible": true,
+  "workbench.colorTheme": "Cobalt2",
   "workbench.colorCustomizations": {
     "[Cobalt2]": {
       "editorIndentGuide.activeBackground": "#789",
@@ -77,7 +76,6 @@
     "typescript",
     "typescriptreact",
   ],
-
   "vsnotes.defaultNotePath": "/home/dizzyrobin/Cloud/Notes",
   "vsnotes.noteTitleConvertSpaces": "-",
   "vsnotes.defaultNoteName": "note",
@@ -112,7 +110,6 @@
     "backgroundColor": "#111",
     "border": "1px solid #eee"
   },
-  "workbench.colorTheme": "Cobalt2",
   "latex-workshop.view.pdf.viewer": "tab",
   "latex-workshop.latex.tools": [
     {

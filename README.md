@@ -10,18 +10,10 @@ git clone https://github.com/dizzyrobin/i3-arch-setup
 cd i3-arch-setup
 ```
 
-## Create user
-
-```
-NEW_USER="dizzyrobin" # Change 'dizzyrobin' for your wanted username
-useradd $NEW_USER -G sudo,wheel -m -U -s /bin/zsh
-passwd $NEW_USER
-```
-
 ## Install dependecies
 
 ```
-sudo pacman -S \
+pacman -S \
     base-devel              `#Basic developer tools`\
     vi                      `#Editor`\
     vim                     `#Editor`\
@@ -59,15 +51,14 @@ sudo pacman -S \
     noto-fonts              `#Fonts`
     noto-fonts-emoji        `#Font for icons and emojis`\
     ttf-font-awesome        `#Font for icons and emojis`\
-    iw                      `#XXX`\
-    rsync                   `#XXX`\
-    acpi                    `#XXX`\
-    neofetch                `#XXX`\
-    xorg                    `#XXX`\
-    xorg-xinit              `#XXX`\
-    jdk8-openjdk            `#XXX`\
+    iw                      `#Manipulate wireless devices`\
+    rsync                   `#File-copying tool`\
+    acpi                    `#Shows battery status`\
+    neofetch                `#Display system info`\
+    xorg                    `#X server`\
+    xorg-xinit              `#X Window System initializer (startx)`\
+    jdk8-openjdk            `#Java 8 JDK`\
     dunst                   `#Notification manager`\
-
     thunderbird             `#Email reader`\
     gimp                    `#Image editor`\
     inkscape                `#Vector editor`\
@@ -77,12 +68,22 @@ sudo pacman -S \
     redshift                `#Night mode`\
     networkmanager          `#Network manager`\
     network-manager-applet  `#Network manager applet`\
+    bluez                   `#Bluetooth`\
+    bluez-util              `#Bluetooth utils`\
     blueman                 `#Bluetooth manager`\
     pulseaudio-bluetooth    `#Pulseaudio bluetooth module`\
-    XXX                     `#XXX`\
+    docker                  `#Docker`\
+    docker-compose          `#Docker compose tool`
 ```
 
-ttf-font-awesome noto-fonts-emoji noto-fonts
+## Create user
+
+```
+groupadd sudo
+groupadd docker
+useradd dizzyrobin -G sudo,wheel,docker -m -U -s /bin/zsh
+passwd dizzyrobin
+```
 
 ## Install oh-my-zsh
 
@@ -97,18 +98,18 @@ cd /tmp
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
+cd ..
+rm -rf yay
 ```
 
 ## Install AUR dependencies
 
 ```
 yay -S \
-    megasync            `#MegaSync Client`\
     ttf-ms-fonts        `#Fonts from Microsoft`\
     google-chrome       `#Google Chrome web browser`\
     spotify             `#Spotify`\
-    tor-browser         `#Tor Browser`\
-    XXX                 `#XXX`\
+    megasync            `#MegaSync Client`
 ```
 
 ## Install npm global programs
@@ -124,7 +125,15 @@ npm install --global \
     n                               `#Node version manager`\
     nodemon                         `#Monitor changes in nodejs projects`\
     @react-native-community/cli     `#React native tools`\
-    firebase-tools                  `#Firebase tools`\
+    firebase-tools                  `#Firebase tools`
+```
+
+## Enable services
+
+```
+sudo systemctl enable NetworkManager.service
+sudo systemctl enable docker.service
+sudo systemctl enable bluetooth.service
 ```
 
 ## Copy the scripts and config files

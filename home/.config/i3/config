@@ -177,7 +177,7 @@ bar {
 bindsym $mod+b bar mode toggle
 
 # Lock screen
-# bindsym $mod+p exec i3lock -c 100000 -e -f & sleep 2 && xset dpms force off
+bindsym $mod+p exec i3lock -c 100000 -e -f & sleep 2 && xset dpms force off
 
 # Remove window titlebar
 for_window [class=".*"] border pixel 0
@@ -204,16 +204,23 @@ for_window [class="Yad"] floating enable
 # Assign workspaces to startup aplications
 # assign [class="Google-chrome"] $ws2
 
+# Toggle key layout us<=>es
+bindsym $mod+m exec togglekb
+
 # Startup applications
 exec --no-startup-id termite
 exec --no-startup-id termite
 # exec --no-startup-id google-chrome-stable
 
+exec --no-startup-id dunst
+exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
 exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
-# exec --no-startup-id dunst
-# exec --no-startup-id picom --config ~/.config/compton/config
+exec --no-startup-id picom --config ~/.config/compton/config
+exec --no-startup-id redshift -t 6500:3500
+# exec --no-startup-id megasync
 
 exec --no-startup-id setxkbmap -option compose:ralt
 exec --no-startup-id setxkbmap -option caps:escape
 
-exec --no-startup-id x1080
+exec --no-startup-id autorandr --load home
