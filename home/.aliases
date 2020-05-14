@@ -51,3 +51,8 @@ alias nightmode='redshift -P -O 3500'
 alias daymode='redshift -P -O 6500'
 alias react-native-open-devmenu='adb shell input keyevent KEYCODE_MENU'
 alias fixkeys='setxkbmap -layout es'
+
+# Docker stuff
+alias symfony-console="docker-compose exec  --user $(id -u) php php bin/console"
+alias symfony-composer="docker-compose exec  php php -d memory_limit=-1 composer.phar"
+alias symfony-test="docker-compose exec  php php bin/phpunit --testdox"

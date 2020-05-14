@@ -20,10 +20,12 @@ pacman -S \
     nano                    `#Editor`\
     git                     `#Version control`\
     qt5-base                `#Depencency`\
+    perl-anyevent-i3        `#i3-save-tree depencency`\
     feh                     `#Wallpaper tool`\
     scrot                   `#Screenshoot tool`\
     termite                 `#Terminal emulator`\
     chromium                `#Web browser`\
+    firefox                 `#Web browser`\
     nodejs                  `#Node js`\
     npm                     `#Node Package Manager`\
     code                    `#Visual Studio Code Editor`\
@@ -48,6 +50,8 @@ pacman -S \
     i3status                `#i3wm bar`\
     i3lock                  `#i3wm lock screen`\
     yad                     `#Calendar`\
+    evince                  `#PDF viewer`\
+    cheese                  `#Webcam GUI`\
     noto-fonts              `#Fonts`
     noto-fonts-emoji        `#Font for icons and emojis`\
     ttf-font-awesome        `#Font for icons and emojis`\
@@ -61,6 +65,8 @@ pacman -S \
     dunst                   `#Notification manager`\
     thunderbird             `#Email reader`\
     gimp                    `#Image editor`\
+    audacity                `#Audio editor`\
+    vlc                     `#Video viewer`\
     inkscape                `#Vector editor`\
     telegram-desktop        `#Telegram Chat Client`\
     discord                 `#Discord chat for gamers`\
@@ -72,6 +78,11 @@ pacman -S \
     bluez-util              `#Bluetooth utils`\
     blueman                 `#Bluetooth manager`\
     pulseaudio-bluetooth    `#Pulseaudio bluetooth module`\
+    keychain                `#Keys lib`\
+    gnome-keyring           `#Keys lib`\
+    libsecret               `#Keys lib`\
+    secret-tool             `#Keys lib`\
+    seahorse                `#Passwords and keys GUI manager`\
     docker                  `#Docker`\
     docker-compose          `#Docker compose tool`
 ```
@@ -107,8 +118,12 @@ rm -rf yay
 ```
 yay -S \
     ttf-ms-fonts        `#Fonts from Microsoft`\
+    ttf-hack            `#Hack font`\
     google-chrome       `#Google Chrome web browser`\
     spotify             `#Spotify`\
+    rofi-greenclip      `#Rofi clipboard plugin`\
+    gitflow-avh         `#Gitflow tool`\
+    postman             `#REST tool`\
     megasync            `#MegaSync Client`
 ```
 

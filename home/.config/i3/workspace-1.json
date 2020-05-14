@@ -1,0 +1,95 @@
+{
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 0,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 416,
+               "width": 660,
+               "x": 0,
+               "y": 0
+            },
+            "name": "terminal",
+            "percent": 0.5,
+            "swallows": [
+               {
+                    "class": "terminal-top-left"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 0,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 416,
+               "width": 660,
+               "x": 0,
+               "y": 0
+            },
+            "name": "terminal",
+            "percent": 0.5,
+            "swallows": [
+               {
+                    "class": "terminal-bottom-left"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 0,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 416,
+               "width": 660,
+               "x": 0,
+               "y": 0
+            },
+            "name": "terminal",
+            "percent": 0.5,
+            "swallows": [
+               {
+                    "class": "terminal-top-right"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 0,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 416,
+               "width": 660,
+               "x": 0,
+               "y": 0
+            },
+            "name": "terminal",
+            "percent": 0.5,
+            "swallows": [
+               {
+                    "class": "terminal-bottom-right"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}

@@ -39,7 +39,8 @@ bindsym $mod+Return exec termite
 # kill focused window
 bindsym $mod+Shift+q kill
 
-bindsym $mod+d exec "rofi -show run -run-command \\"zsh -i -c '{cmd}'\\" -color-window '#222222, #555566, #b1b4b3' -color-normal '#222222, #b1b4b3, #222222, #005577, #b1b4b3'"
+bindsym $mod+d exec "rofi -theme onedark -show run -run-command \\"zsh -i -c '{cmd}'\\""
+bindsym $mod+c exec "rofi -theme clipboard -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
 bindsym $mod+Tab exec --no-startup-id rofi -modi combi -combi-modi window -show combi
 
 # change focus
@@ -104,6 +105,11 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+
+workspace $ws1 output eDP-1
+workspace $ws2 output HDMI-1-1 HDMI-1-2
+workspace $ws3 output HDMI-1-1 HDMI-1-2
+workspace $ws4 output eDP-1
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -198,20 +204,23 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Screenshot utility
 bindsym --release Print exec scrot -s ~/Pictures/screenshots/%Y-%m-%d_%H-%M-%S.png
+bindsym --release $mod+Print exec scrot ~/Pictures/screenshots/%Y-%m-%d_%H-%M-%S.png
 
 for_window [class="Yad"] floating enable
-
-# Assign workspaces to startup aplications
-# assign [class="Google-chrome"] $ws2
 
 # Toggle key layout us<=>es
 bindsym $mod+m exec togglekb
 
-# Startup applications
-exec --no-startup-id termite
-exec --no-startup-id termite
-# exec --no-startup-id google-chrome-stable
+# Append layouts
+exec --no-startup-id i3-msg "workspace 1; append_layout /home/dizzyrobin/.config/i3/workspace-1.json"
+exec --no-startup-id i3-msg "workspace 2; append_layout /home/dizzyrobin/.config/i3/workspace-2.json"
 
+# Fix graphics driver bug
+exec --no-startup-id autorandr --load home
+exec --no-startup-id autorandr --load home2
+
+# Startup passive applications
+exec --no-startup-id greenclip daemon
 exec --no-startup-id dunst
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
@@ -220,7 +229,9 @@ exec --no-startup-id picom --config ~/.config/compton/config
 exec --no-startup-id redshift -t 6500:3500
 # exec --no-startup-id megasync
 
-exec --no-startup-id setxkbmap -option compose:ralt
-exec --no-startup-id setxkbmap -option caps:escape
-
-exec --no-startup-id autorandr --load home
+# Startup active applications
+exec --no-startup-id termite --class terminal-top-left
+exec --no-startup-id termite --class terminal-bottom-left
+exec --no-startup-id termite --class terminal-top-right
+exec --no-startup-id termite --class terminal-bottom-right
+exec --no-startup-id google-chrome-stable

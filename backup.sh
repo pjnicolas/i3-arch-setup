@@ -6,13 +6,15 @@ lines=`cat << EOF
 bin                             : *
 Pictures                        : wallpaper.png
 .oh-my-zsh/themes               : pygmalion.zsh-theme
-.config/i3                      : config
+.local/share/rofi/themes        : *
+.config/i3                      : *
+.config/i3blocks                : *
 .config/dunst                   : dunstrc
 .config/gtk-3.0                 : gtk.css
 .config/termite                 : config
 .config/Code - OSS/User         : settings.json keybindings.json
-.config/i3blocks                : *
 .config/compton                 : config
+.config/rofi                    : config.rasi
 EOF
 `
 

@@ -1,0 +1,5 @@
+configuration {
+  // Cool themes: Arc-Dark arthur material onedark glue_pro_blue gruvbox-dark-hard slate sidebar
+  // theme: "Arc-Dark";
+  font: "hack 10";
+}
