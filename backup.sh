@@ -12,7 +12,7 @@ Pictures                        : wallpaper.png
 .config/dunst                   : dunstrc
 .config/gtk-3.0                 : gtk.css
 .config/termite                 : config
-.config/Code - OSS/User         : settings.json keybindings.json
+.config/Code/User               : settings.json keybindings.json
 .config/compton                 : config
 .config/rofi                    : config.rasi
 EOF

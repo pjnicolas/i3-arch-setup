@@ -6,7 +6,7 @@ My personal i3wm setup guide for arch linux
 ## Clone the repo
 
 ```
-git clone https://github.com/dizzyrobin/i3-arch-setup
+git clone https://github.com/pjnicolas/i3-arch-setup
 cd i3-arch-setup
 ```
 
@@ -92,8 +92,8 @@ pacman -S \
 ```
 groupadd sudo
 groupadd docker
-useradd dizzyrobin -G sudo,wheel,docker -m -U -s /bin/zsh
-passwd dizzyrobin
+useradd pjnicolas -G sudo,wheel,docker -m -U -s /bin/zsh
+passwd pjnicolas
 ```
 
 ## Install oh-my-zsh
@@ -138,9 +138,7 @@ npm config set prefix '~/.npm-global'
 npm install --global \
     npm                             `#Node package manager`\
     n                               `#Node version manager`\
-    nodemon                         `#Monitor changes in nodejs projects`\
-    @react-native-community/cli     `#React native tools`\
-    firebase-tools                  `#Firebase tools`
+    nodemon                         `#Monitor changes in nodejs projects`
 ```
 
 ## Enable services

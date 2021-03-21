@@ -1,0 +1,105 @@
+#!/bin/zsh
+
+printHelp() {
+  echo "spotifyinfo - Get info about the song playing in spotify"
+  echo "Usage: spotifyinfo [OPTION]"
+  echo ""
+  echo "Prints the current song info, depending on following args:"
+  echo ""
+  echo "  -L\t\tPrint the lyrics"
+  echo "  -S\t\tPrint the title and artist, separated by a dash (-)"
+  echo "  -T\t\tPrint the title"
+  echo "  -A\t\tPrint the artist"
+  echo "  -B\t\tPrint the album"
+  echo "  -h, -H\tPrint this help menu"
+}
+
+LYRICS_API="https://makeitpersonal.co/lyrics/"
+
+SP_DEST="org.mpris.MediaPlayer2.spotify"
+SP_PATH="/org/mpris/MediaPlayer2"
+SP_MEMB="org.mpris.MediaPlayer2.Player"
+SPOTIFY_METADATA="$(dbus-send                                                 \
+  --print-reply                                  `# We need the reply.`       \
+  --dest=$SP_DEST                                                             \
+  $SP_PATH                                                                    \
+  org.freedesktop.DBus.Properties.Get                                         \
+  string:"$SP_MEMB" string:'Metadata'                                         \
+  | grep -Ev "^method"                           `# Ignore the first line.`   \
+  | grep -Eo '("(.*)")|(\b[0-9][a-zA-Z0-9.]*\b)' `# Filter interesting fiels.`\
+  | sed -E '2~2 a|'                              `# Mark odd fields.`         \
+  | tr -d '\n'                                   `# Remove all newlines.`     \
+  | sed -E 's/\|/\n/g'                           `# Restore newlines.`        \
+  | sed -E 's/(xesam:)|(mpris:)//'               `# Remove ns prefixes.`      \
+  | sed -E 's/^"//'                              `# Strip leading...`         \
+  | sed -E 's/"$//'                              `# ...and trailing quotes.`  \
+  | sed -E 's/\"+/|/'                            `# Regard "" as seperator.`  \
+  | sed -E 's/ +/ /g'                            `# Merge consecutive spaces.`\
+)"
+
+echo $SPOTIFY_METADATA
+
+exit 1
+
+metadata=`echo $SPOTIFY_METADATA`
+artist=`echo $metadata | sed -n 's/artist|//p'`
+title=`echo $metadata | sed -n 's/title|//p'`
+album=`echo $metadata | sed -n 's/album|//p'`
+song=`echo "$title - $artist"`
+
+show_lyrics=0
+while getopts "LSTABhH" opt; do
+    case "${opt}" in
+        L) show_lyrics=1;;
+        S) echo $song;;
+        T) echo $title;;
+        A) echo $artist;;
+        B) echo $album;;
+        h) printHelp; exit 0;;
+        H) printHelp; exit 0;;
+        *) printHelp; exit 1;;
+    esac
+done
+
+if [ "x$opt" = "x" ]; then
+  echo "Artist:\t$artist"
+  echo "Album:\t$album"
+  echo "Song:\t$title"
+fi
+
+if [ $show_lyrics -eq 1 ]; then
+    while true; do
+        # TODO: REFACTOR THIS TO A FUNCTION
+        SPOTIFY_METADATA="$(dbus-send                                                 \
+          --print-reply                                  `# We need the reply.`       \
+          --dest=$SP_DEST                                                             \
+          $SP_PATH                                                                    \
+          org.freedesktop.DBus.Properties.Get                                         \
+          string:"$SP_MEMB" string:'Metadata'                                         \
+          | grep -Ev "^method"                           `# Ignore the first line.`   \
+          | grep -Eo '("(.*)")|(\b[0-9][a-zA-Z0-9.]*\b)' `# Filter interesting fiels.`\
+          | sed -E '2~2 a|'                              `# Mark odd fields.`         \
+          | tr -d '\n'                                   `# Remove all newlines.`     \
+          | sed -E 's/\|/\n/g'                           `# Restore newlines.`        \
+          | sed -E 's/(xesam:)|(mpris:)//'               `# Remove ns prefixes.`      \
+          | sed -E 's/^"//'                              `# Strip leading...`         \
+          | sed -E 's/"$//'                              `# ...and trailing quotes.`  \
+          | sed -E 's/\"+/|/'                            `# Regard "" as seperator.`  \
+          | sed -E 's/ +/ /g'                            `# Merge consecutive spaces.`\
+        )"
+
+        metadata=`echo $SPOTIFY_METADATA`
+        artist=`echo $metadata | sed -n 's/artist|//p'`
+        title=`echo $metadata | sed -n 's/title|//p'`
+        album=`echo $metadata | sed -n 's/album|//p'`
+        song=`echo "$title - $artist"`
+
+        lyrics=`curl -s --get --verbose $LYRICS_API --data-urlencode "artist=$artist;title=$title"`
+        if [[ $lyrics == *"Sorry, We don't have lyrics for this song yet"* ]]; then
+            nohup xdg-open "http://www.google.com/search?q=$title lyrics" > /dev/null 2> /dev/null &
+            echo "Lyrics don't found. Searching lyrics in the web navigator." | less
+        else
+            echo $lyrics | less
+        fi
+    done
+fi

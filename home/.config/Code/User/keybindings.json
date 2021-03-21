@@ -1,0 +1,17 @@
+[
+  {
+    "key": "ctrl+l",
+    "command": "expandLineSelection",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+shift+d",
+    "command": "editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+/",
+    "command": "-toggleExplainMode",
+    "when": "suggestWidgetVisible"
+  },
+]

@@ -207,6 +207,7 @@ bindsym --release Print exec scrot -s ~/Pictures/screenshots/%Y-%m-%d_%H-%M-%S.p
 bindsym --release $mod+Print exec scrot ~/Pictures/screenshots/%Y-%m-%d_%H-%M-%S.png
 
 for_window [class="Yad"] floating enable
+for_window [title="Microsoft Teams Notification"] floating enable
 
 # Toggle key layout us<=>es
 bindsym $mod+m exec togglekb
