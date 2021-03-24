@@ -14,4 +14,14 @@
     "command": "-toggleExplainMode",
     "when": "suggestWidgetVisible"
   },
+  {
+    "key": "ctrl+shift+g",
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active"
+  },
+  {
+    "key": "ctrl+shift+e",
+    "command": "workbench.view.explorer",
+    "when": "viewContainer.workbench.view.explorer.enabled"
+  },
 ]
