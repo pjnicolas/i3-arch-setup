@@ -17,7 +17,7 @@
   "editor.renderFinalNewline": true,
   "editor.mouseWheelZoom": true,
   "editor.fontFamily": "Hack, monospace",
-  "editor.fontSize": 13,
+  "editor.fontSize": 15,
   "editor.letterSpacing": 0.5,
   "editor.cursorStyle": "block",
   // "editor.cursorWidth": 4,
