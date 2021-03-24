@@ -3,7 +3,6 @@
   "telemetry.enableTelemetry": false,
 
   "editor.lineNumbers": "on",
-  "editor.rulers": [100],
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.codeActionsOnSave": {
@@ -23,7 +22,7 @@
   "editor.cursorStyle": "block",
   // "editor.cursorWidth": 4,
   "editor.cursorBlinking": "blink",
-  "editor.renderWhitespace": "boundary",
+  "editor.renderWhitespace": "trailing",
   "editor.fontWeight": "bold",
   "editor.tokenColorCustomizations": {
     "[Cobalt2]": {
@@ -41,7 +40,7 @@
   "files.trimTrailingWhitespace": true,
   "files.eol": "\n",
   "files.insertFinalNewline": true,
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 1,
   "window.menuBarVisibility": "toggle",
   "window.titleBarStyle": "native",
   "window.restoreWindows": "none",
@@ -54,8 +53,8 @@
   "workbench.colorTheme": "Cobalt2",
   "workbench.colorCustomizations": {
     "[Cobalt2]": {
-      "editorIndentGuide.activeBackground": "#789",
-      "editorIndentGuide.background": "#456"
+      "editorIndentGuide.activeBackground": "#7898",
+      "editorIndentGuide.background": "#7892"
     }
   },
   "emmet.excludeLanguages": ["javascriptreact"],
@@ -66,12 +65,7 @@
     "**/.settings": true,
     "**/.factorypath": true
   },
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
+  "vetur.validation.template": false,
   "diffEditor.ignoreTrimWhitespace": false,
   "explorer.confirmDragAndDrop": false,
   "gitlens.hovers.currentLine.over": "line",
@@ -86,10 +80,10 @@
   },
   "todo-tree.highlights.customHighlight": {
     "BUG:": {
-      "icon": "bug",
+      "icon": "bug"
     },
     "FIXME:": {
-      "icon": "flame",
+      "icon": "flame"
     }
   },
   "todo-tree.general.tags": [
@@ -101,5 +95,7 @@
     "[ ]",
     "[x]"
   ],
-  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)"
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "scm.diffDecorationsGutterVisibility": "hover",
+  "workbench.statusBar.visible": false
 }
