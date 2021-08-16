@@ -34,7 +34,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -110,6 +110,8 @@ workspace $ws1 output eDP-1
 workspace $ws2 output HDMI-1-1 HDMI-1-2
 workspace $ws3 output HDMI-1-1 HDMI-1-2
 workspace $ws4 output eDP-1
+workspace $ws5 output HDMI-1-1 HDMI-1-2
+workspace $ws6 output eDP-1
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -183,15 +185,21 @@ bar {
 bindsym $mod+b bar mode toggle
 
 # Lock screen
-bindsym $mod+p exec i3lock -c 100000 -e -f & sleep 2 && xset dpms force off
+bindsym $mod+p exec bash ~/bin/lock
+# bindsym $mod+p exec light -O && light -S 0 && i3lock -c 100000 -e -f -n && light -I
+# bindsym $mod+p exec i3lock -c 100000 -e -f & sleep 2 && xset dpms force off
 
 # Remove window titlebar
 for_window [class=".*"] border pixel 0
 
 # i3-gaps
-gaps inner 16
-gaps outer 2
+gaps inner 10
+gaps outer 0
 smart_gaps on
+
+# Keys for screen backlight (install playerctl: `sudo pacman -S light`)
+bindsym XF86MonBrightnessUp exec light -A 20 && pkill -RTMIN+1 i3blocks && dunstify -r 7778 -u low "Bightness up" "`light`"
+bindsym XF86MonBrightnessDown exec light -U 20 && pkill -RTMIN+1 i3blocks && dunstify -r 7778 -u low "Bightness down" "`light`"
 
 # Keys for audio volume (install playerctl: `sudo pacman -S playerctl`)
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks && dunstify -r 7778 -u low "`getaudiodescription`" "`getaudiovolume` `getaudiomuted`"
@@ -212,13 +220,8 @@ for_window [title="Microsoft Teams Notification"] floating enable
 # Toggle key layout us<=>es
 bindsym $mod+m exec togglekb
 
-# Append layouts
-exec --no-startup-id i3-msg "workspace 1; append_layout /home/dizzyrobin/.config/i3/workspace-1.json"
-exec --no-startup-id i3-msg "workspace 2; append_layout /home/dizzyrobin/.config/i3/workspace-2.json"
-
 # Fix graphics driver bug
 exec --no-startup-id autorandr --load home
-exec --no-startup-id autorandr --load home2
 
 # Startup passive applications
 exec --no-startup-id greenclip daemon
@@ -231,8 +234,16 @@ exec --no-startup-id redshift -t 6500:3500
 # exec --no-startup-id megasync
 
 # Startup active applications
-exec --no-startup-id termite --class terminal-top-left
-exec --no-startup-id termite --class terminal-bottom-left
-exec --no-startup-id termite --class terminal-top-right
-exec --no-startup-id termite --class terminal-bottom-right
+exec --no-startup-id i3-msg "workspace 1; append_layout /home/pjnicolas/.config/i3/workspace-1.json"
+exec --no-startup-id alacritty --class terminal-top-left
+exec --no-startup-id alacritty --class terminal-bottom-left
+exec --no-startup-id alacritty --class terminal-top-right
+exec --no-startup-id alacritty --class terminal-bottom-right
+exec --no-startup-id i3-msg "workspace 3; append_layout /home/pjnicolas/.config/i3/workspace-3.json"
 exec --no-startup-id google-chrome-stable
+# exec --no-startup-id i3-msg "workspace 4; append_layout /home/pjnicolas/.config/i3/workspace-4.json"
+# exec --no-startup-id google-chrome-stable --app="https://www.notion.so/"
+exec --no-startup-id i3-msg "workspace 5; append_layout /home/pjnicolas/.config/i3/workspace-5.json"
+exec --no-startup-id thunderbird
+exec --no-startup-id i3-msg "workspace 1"
+exec --no-startup-id i3-msg "workspace 2"

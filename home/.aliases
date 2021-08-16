@@ -23,6 +23,9 @@ alias skype='gapp https://web.skype.com'
 alias lyricsfy='gapp https://lyricsfy.pjnicolas.com/'
 alias nightfm='gapp https://night.fm/'
 alias roam='gapp https://roamresearch.com/'
+alias notion='gapp https://www.notion.so/'
+alias todoist='gapp https://todoist.com/app/today'
+alias whatsapp='gapp https://web.whatsapp.com/'
 
 # timers
 alias 3min='google-chrome-stable https://www.google.com/search?q=countdown+3+minutes'
@@ -55,6 +58,12 @@ alias daymode='redshift -P -O 6500'
 alias react-native-open-devmenu='adb shell input keyevent KEYCODE_MENU'
 alias kb-layout-es='setxkbmap -layout es'
 alias kb-layout-us='setxkbmap -layout us'
+alias ssh='TERM=vt100 ssh'
+
+# ssh and vpn
+alias ssh-zapp-dev='ssh root@165.227.239.205'
+alias ssh-zapp-notrick='ssh root@64.225.77.206'
+alias vpn-saez-sap-salesforce='sudo openvpn --redirect-gateway ipv6 --config /home/pjnicolas/Programs/pedrojavier__ssl_vpn_config.ovpn --comp-lzo yes'
 
 # docker
 alias symfony-console="docker-compose exec --user $(id -u) php php bin/console"

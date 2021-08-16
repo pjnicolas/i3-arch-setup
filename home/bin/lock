@@ -1,0 +1,8 @@
+#!/bin/bash
+
+light -O
+light -S 0
+killall picom
+i3lock -c 100000 -e -f -n
+light -I
+nohup picom --config ~/.config/compton/config > /dev/null 2> /dev/null &

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+folder=`pwd | xargs basename`
+branch=`git status | head -1 | cut -d" " -f3`
+
+echo "Actualizado: $folder => $branch"

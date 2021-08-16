@@ -1,4 +1,4 @@
-export ZSH="/home/dizzyrobin/.oh-my-zsh"
+export ZSH="/home/pjnicolas/.oh-my-zsh"
 ZSH_THEME="pygmalion"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -50,7 +50,7 @@ if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
 
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi
+# if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi
 
 setopt dotglob
 unsetopt share_history
@@ -61,3 +61,6 @@ _systemctl_unit_state() {
 }
 
 zstyle ':completion:*' rehash true
+
+# autoload -U +X bashcompinit && bashcompinit
+# complete -o nospace -C /home/pjnicolas/bin/terraform terraform

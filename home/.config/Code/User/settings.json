@@ -1,10 +1,8 @@
 {
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
-
   "editor.lineNumbers": "on",
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
@@ -37,11 +35,18 @@
     "editor.formatOnPaste": false,
     "editor.formatOnType": false
   },
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  },
   "files.trimTrailingWhitespace": true,
   "files.eol": "\n",
   "files.insertFinalNewline": true,
-  "window.zoomLevel": 1,
-  "window.menuBarVisibility": "toggle",
   "window.titleBarStyle": "native",
   "window.restoreWindows": "none",
   "explorer.confirmDelete": true,
@@ -49,15 +54,15 @@
   "breadcrumbs.enabled": true,
   "javascript.updateImportsOnFileMove.enabled": "never",
   "workbench.startupEditor": "newUntitledFile",
-  "workbench.activityBar.visible": true,
-  "workbench.colorTheme": "Cobalt2",
   "workbench.colorCustomizations": {
     "[Cobalt2]": {
       "editorIndentGuide.activeBackground": "#7898",
       "editorIndentGuide.background": "#7892"
     }
   },
-  "emmet.excludeLanguages": ["javascriptreact"],
+  "emmet.excludeLanguages": [
+    "javascriptreact"
+  ],
   "todo-tree.tree.showScanModeButton": false,
   "files.exclude": {
     "**/.classpath": true,
@@ -84,7 +89,17 @@
     },
     "FIXME:": {
       "icon": "flame"
-    }
+    },
+    "[ ]": {
+      "type": "tag",
+      "fontWeight": "bold",
+      "foreground": "#0f0",
+      "background": "#0000"
+    },
+    "[x]": {
+      "foreground": "#fff3",
+      "background": "#0000",
+    },
   },
   "todo-tree.general.tags": [
     "BUG:",
@@ -97,5 +112,17 @@
   ],
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
   "scm.diffDecorationsGutterVisibility": "hover",
-  "workbench.statusBar.visible": false
+  "workbench.colorTheme": "Cobalt2",
+  "workbench.iconTheme": "material-icon-theme",
+  "window.menuBarVisibility": "toggle",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
+  "window.zoomLevel": 1
 }
