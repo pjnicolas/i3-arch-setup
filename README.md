@@ -3,6 +3,12 @@ My personal i3wm setup guide for arch linux
 
 # [Work in progress guide]
 
+## Install i3-gaps
+
+```
+pacman -S i3
+```
+
 ## Clone the repo
 
 ```
@@ -83,6 +89,7 @@ pacman -S \
     libsecret               `#Keys lib`\
     secret-tool             `#Keys lib`\
     seahorse                `#Passwords and keys GUI manager`\
+    light                   `#Backlight controller`\
     docker                  `#Docker`\
     docker-compose          `#Docker compose tool`
 ```
@@ -92,7 +99,9 @@ pacman -S \
 ```
 groupadd sudo
 groupadd docker
-useradd pjnicolas -G sudo,wheel,docker -m -U -s /bin/zsh
+groupadd video
+groupadd input
+useradd pjnicolas -G sudo,wheel,docker,input,video -m -U -s /bin/zsh
 passwd pjnicolas
 ```
 
@@ -123,8 +132,7 @@ yay -S \
     spotify             `#Spotify`\
     rofi-greenclip      `#Rofi clipboard plugin`\
     gitflow-avh         `#Gitflow tool`\
-    postman             `#REST tool`\
-    megasync            `#MegaSync Client`
+    postman             `#REST tool`
 ```
 
 ## Install npm global programs
@@ -139,6 +147,11 @@ npm install --global \
     npm                             `#Node package manager`\
     n                               `#Node version manager`\
     nodemon                         `#Monitor changes in nodejs projects`
+```
+
+```
+mkdir ~/.n
+n lts
 ```
 
 ## Enable services
