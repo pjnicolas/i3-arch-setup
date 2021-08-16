@@ -29,12 +29,11 @@ pacman -S \
     perl-anyevent-i3        `#i3-save-tree depencency`\
     feh                     `#Wallpaper tool`\
     scrot                   `#Screenshoot tool`\
-    termite                 `#Terminal emulator`\
+    alacritty               `#Terminal emulator`\
     chromium                `#Web browser`\
     firefox                 `#Web browser`\
     nodejs                  `#Node js`\
     npm                     `#Node Package Manager`\
-    code                    `#Visual Studio Code Editor`\
     nautilus                `#File manager`\
     file-roller             `#Archive manager`\
     pulseaudio              `#Pulseaudio`\
@@ -87,7 +86,6 @@ pacman -S \
     keychain                `#Keys lib`\
     gnome-keyring           `#Keys lib`\
     libsecret               `#Keys lib`\
-    secret-tool             `#Keys lib`\
     seahorse                `#Passwords and keys GUI manager`\
     light                   `#Backlight controller`\
     docker                  `#Docker`\
@@ -126,13 +124,14 @@ rm -rf yay
 
 ```
 yay -S \
-    ttf-ms-fonts        `#Fonts from Microsoft`\
-    ttf-hack            `#Hack font`\
-    google-chrome       `#Google Chrome web browser`\
-    spotify             `#Spotify`\
-    rofi-greenclip      `#Rofi clipboard plugin`\
-    gitflow-avh         `#Gitflow tool`\
-    postman             `#REST tool`
+    ttf-ms-fonts            `#Fonts from Microsoft`\
+    ttf-hack                `#Hack font`\
+    google-chrome           `#Google Chrome web browser`\
+    spotify                 `#Spotify`\
+    rofi-greenclip          `#Rofi clipboard plugin`\
+    gitflow-avh             `#Gitflow tool`\
+    visual-studio-code-bin  `#Code editor`\
+    postman                 `#REST tool`
 ```
 
 ## Install npm global programs

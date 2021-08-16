@@ -11,10 +11,10 @@ Pictures                        : wallpaper.png
 .config/i3blocks                : *
 .config/dunst                   : dunstrc
 .config/gtk-3.0                 : gtk.css
-.config/termite                 : config
 .config/Code/User               : settings.json keybindings.json
 .config/compton                 : config
 .config/rofi                    : config.rasi
+.config/alactritty              : alacritty.yml
 EOF
 `
 
