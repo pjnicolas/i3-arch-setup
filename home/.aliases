@@ -63,6 +63,7 @@ alias ssh='TERM=vt100 ssh'
 # ssh and vpn
 alias ssh-zapp-dev='ssh root@165.227.239.205'
 alias ssh-zapp-notrick='ssh root@64.225.77.206'
+alias ssh-aws-alice='ssh ubuntu@13.36.14.0 -i $HOME/AWS/alice.pem'
 alias vpn-saez-sap-salesforce='sudo openvpn --redirect-gateway ipv6 --config /home/pjnicolas/Programs/pedrojavier__ssl_vpn_config.ovpn --comp-lzo yes'
 
 # docker

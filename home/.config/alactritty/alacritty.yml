@@ -1,0 +1,51 @@
+env:
+  TERM: vt100
+
+window:
+  padding:
+    x: 8
+    y: 8
+
+scrolling:
+  history: 50000
+
+font:
+  normal:
+    family: Hack
+    style: Regular
+
+  bold:
+    family: Hack
+    style: Bold
+
+  italic:
+    family: Hack
+    style: Italic
+
+  size: 10.0
+
+
+colors:
+  primary:
+    background: '0x000000'
+    foreground: '0xffffff'
+
+  normal:
+    black:   '0x101010'
+    red:     '0xff3030'
+    green:   '0x30ff30'
+    yellow:  '0xffff30'
+    blue:    '0x3030ff'
+    magenta: '0xff30ff'
+    cyan:    '0x30ffff'
+    white:   '0xffffff'
+
+  bright:
+    black:   '0x101010'
+    red:     '0xff3030'
+    green:   '0x30ff30'
+    yellow:  '0xffff30'
+    blue:    '0x3030ff'
+    magenta: '0xff30ff'
+    cyan:    '0x30ffff'
+    white:   '0xffffff'

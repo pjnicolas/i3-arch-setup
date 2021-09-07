@@ -10,17 +10,17 @@
             "current_border_width": 0,
             "floating": "auto_off",
             "geometry": {
-               "height": 416,
-               "width": 660,
-               "x": 0,
-               "y": 0
+                "height": 416,
+                "width": 660,
+                "x": 0,
+                "y": 0
             },
             "name": "terminal",
             "percent": 0.5,
             "swallows": [
-               {
+                {
                     "class": "terminal-top-left"
-               }
+                }
             ],
             "type": "con"
         },
@@ -29,17 +29,17 @@
             "current_border_width": 0,
             "floating": "auto_off",
             "geometry": {
-               "height": 416,
-               "width": 660,
-               "x": 0,
-               "y": 0
+                "height": 416,
+                "width": 660,
+                "x": 0,
+                "y": 0
             },
             "name": "terminal",
             "percent": 0.5,
             "swallows": [
-               {
+                {
                     "class": "terminal-bottom-left"
-               }
+                }
             ],
             "type": "con"
         }
@@ -58,17 +58,17 @@
             "current_border_width": 0,
             "floating": "auto_off",
             "geometry": {
-               "height": 416,
-               "width": 660,
-               "x": 0,
-               "y": 0
+                "height": 416,
+                "width": 660,
+                "x": 0,
+                "y": 0
             },
             "name": "terminal",
             "percent": 0.5,
             "swallows": [
-               {
+                {
                     "class": "terminal-top-right"
-               }
+                }
             ],
             "type": "con"
         },
@@ -77,17 +77,17 @@
             "current_border_width": 0,
             "floating": "auto_off",
             "geometry": {
-               "height": 416,
-               "width": 660,
-               "x": 0,
-               "y": 0
+                "height": 416,
+                "width": 660,
+                "x": 0,
+                "y": 0
             },
             "name": "terminal",
             "percent": 0.5,
             "swallows": [
-               {
+                {
                     "class": "terminal-bottom-right"
-               }
+                }
             ],
             "type": "con"
         }

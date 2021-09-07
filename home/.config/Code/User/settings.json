@@ -63,7 +63,6 @@
   "emmet.excludeLanguages": [
     "javascriptreact"
   ],
-  "todo-tree.tree.showScanModeButton": false,
   "files.exclude": {
     "**/.classpath": true,
     "**/.project": true,
@@ -118,11 +117,8 @@
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   },
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter.notebook.ipynb",
-      "filenamePattern": "*.ipynb"
-    }
-  ],
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
   "window.zoomLevel": 1
 }
